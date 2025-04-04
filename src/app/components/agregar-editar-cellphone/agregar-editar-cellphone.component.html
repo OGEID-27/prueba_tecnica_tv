@@ -1,0 +1,63 @@
+<div class="container-sm">
+    <div class="container-sm  justify-content-center my-4">
+        <h2>{{titulo}} CELULAR 📱</h2>
+    </div>
+
+
+    <form [formGroup]="fomularioCelular">
+        <div class="card text-center rounded">
+            <div class="card-header">
+                Rellena el formulario
+            </div>
+            <div class="card-body">
+                <div class="form-floating my-3">
+                    <input type="text" formControlName="name" class="form-control" id="floatingInput"
+                        placeholder="name@example.com"
+                        [ngClass]="{'is-invalid': fomularioCelular.get('name')?.touched && fomularioCelular.get('name')?.invalid}">
+                    <label for="floatingInput">Nombre del Dispositivo</label>
+                </div>
+
+                <div class="form-floating my-3">
+                    <input type="text" formControlName="Generation" class="form-control" id="floatingInput"
+                        placeholder="name@example.com"
+                        [ngClass]="{'is-invalid': fomularioCelular.get('Generation')?.touched && fomularioCelular.get('Generation')?.invalid}">
+                    <label for="floatingInput">Generacion</label>
+                </div>
+
+                <div class="form-floating my-3">
+                    <input type="number" formControlName="Price" class="form-control" id="floatingInput"
+                        placeholder="name@example.com"
+                        [ngClass]="{'is-invalid': fomularioCelular.get('Price')?.touched && fomularioCelular.get('Price')?.invalid}">
+                    <label for="floatingInput">Precio</label>
+                </div>
+
+                <div class="form-floating my-3">
+                    <input type="text" formControlName="Capacity" class="form-control" id="floatingInput"
+                        placeholder="name@example.com"
+                        [ngClass]="{'is-invalid': fomularioCelular.get('Capacity')?.touched && fomularioCelular.get('Capacity')?.invalid}">
+                    <label for="floatingInput">Capacidad</label>
+                </div>
+            </div>
+
+
+            <div class="card-footer text-body-secondary">
+                <button type="button" (click)="agregarEditar()"
+                    class="btn {{claseBoton}} btn-lg w-100">{{boton}}</button>
+            </div>
+        </div>
+
+    </form>
+
+    @if (alert) {
+
+    <div class="position-relative">
+        <div class="position-sticky bottom-0 end-0">
+            <div class="alert alert-success m-5">
+                ✅ ELEMENTO {{titulo}} CORRECTAMENTE.
+            </div>
+        </div>
+    </div>
+    }
+
+
+</div>
